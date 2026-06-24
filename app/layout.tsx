@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Google_Sans_Flex, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "../components/Footer";
 
@@ -10,6 +10,12 @@ const spaceMono = Space_Mono({
     display: "swap",
 });
 
+const googleSanflex = Google_Sans_Flex({
+    weight: ["400", "700"],
+    variable: "--font-google-sanflex",
+    subsets: ["latin"],
+    display: "swap",
+});
 
 export const metadata: Metadata = {
     title: "Realteek — Buy, Sell & Rent Real Estate Done Right",
@@ -31,7 +37,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${spaceMono.variable} h-full antialiased`}>
+        <html lang="en" className={`${googleSanflex.variable} h-full antialiased`}>
             <body className="min-h-full flex flex-col">
                 {children}
                 <Footer />
